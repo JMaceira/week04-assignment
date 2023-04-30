@@ -98,12 +98,16 @@ console.log(sum)
 console.log(`-----------------------------------------------
 7.Write a function that takes two parameters, word and n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in ‘Hello’ and 3, I would expect the function to return ‘HelloHelloHello’). \n`)
 
-function twoParam (word,n) {
-  //  return word.concact(n);
+let variable = ''                   //created string variable
+
+function twoParam (word,n) {        //included two parameters word and n
+  for (let i = 1; i <= n; i++) {    // iterating over the 1st param/argument.. then using <= n to step length of n for end of 'string concat.
+    variable += word                // giving the variable value of word iterating itself.
+  }
+  return variable
 }
 
-console.log(twoParam('Hello','World'))
-//console.log(`Hello ${word.repeat(3)}`);
+console.log(twoParam('Hello', 3))   //calling fucntion with 'hello string and 3 as arguments.
 
 console.log(`-----------------------------------------------
 8.Write a function that takes two parameters, firstName and lastName, and returns a full name.  The full name should be the first and the last name separated by a space. \n`)
@@ -174,20 +178,43 @@ console.log(greaterOrLess())                    // calling the function
 
 console.log(`-----------------------------------------------
 12.Write a function called willBuyDrink that takes a boolean isHotOutside, and a number moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50. \n`)
-temp = 80
-isHotOutside = temp > 65;
-moneyInPocket = 200;
 
-function willBuyDrink () {
- if (isHotOutside && moneyInPocket > 10.50){
+function willBuyDrink () {  //created function with 2 parameters.
+temp = 82;
+moneyInPocket = 88;
+isHotOutside = temp > 65;
+
+if (isHotOutside && moneyInPocket > 10.50){           
     return true;
- } else {
+ } else {                                               //created if/else statement to print out true or false value
     return false;
  }
 
 }
-console.log(willBuyDrink())
+console.log(willBuyDrink())                             //calling the fucntion 
 
 console.log(`-----------------------------------------------
 13.  Create a function of your own that solves a problem. \n`)
+console.log('Whos has more Championships?')
+
+let championshipYearsCeltics = [1957, 1959, 1960, 1961, 1962, 1963, 1964, 1965, 1966, 1968, 1969, 1974, 1976, 1981, 1984, 1986, 2008]
+let championshipYearsLakers = [1949, 1950, 1952, 1953, 1954, 1972, 1980, 1982, 1985, 1987, 1988, 2000, 2001, 2002, 2009, 2010,2020]
+
+function whosHasMoreChampionships(championshipYearsCeltics,championshipYearsLakers) {
+    
+    if (championshipYearsCeltics.length > championshipYearsLakers.length){
+        return 'Celtics';
+    } else if (championshipYearsLakers.length > championshipYearsCeltics.length){
+               return 'Lakers';
+    }  else {
+            return 'Tied but Celtics are always going to be better!';
+        }
+
+}
+
+console.log(whosHasMoreChampionships(championshipYearsCeltics,championshipYearsLakers))
 // In comments, write what the function does and why you created it. 
+
+//the function calls to check which array is longer in this instance the arrays have the values of all the years each franchise has won a championship.
+// I made this function in order to showcase my love for the sport of basketball and to show the comparison of array lengths.
+// P.S hope you agree and if not the Lakers are still great... just not better than my Celtics! haha!
